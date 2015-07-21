@@ -1,0 +1,7 @@
+<ul>
+<% @pokemons.each do |pokemon| %>
+  <li><%= pokemon['name'] %>
+    <br>
+    <%= image_tag('http://pokeapi.co' + JSON.parse(RestClient.get('http://pokeapi.co' + JSON.parse(RestClient.get('http://pokeapi.co' + '/api/v1/pokemon/' + pokemon['name'].downcase))['sprites'][0]['resource_uri']))['image']) %></li>
+<% end %>
+</ul>
